@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto implementa una arquitectura limpia para la gestión de mensajes utilizando FastAPI, SQLAlchemy y Pydantic. Permite crear, consultar y listar mensajes almacenados en una base de datos relacional, siguiendo buenas prácticas de separación de capas, pruebas automatizadas y despliegue en contenedores.
+Este proyecto implementa una arquitectura limpia para la gestión de mensajes utilizando FastAPI, SQLAlchemy y Pydantic. Permite crear, consultar, buscar y listar mensajes almacenados en una base de datos relacional, siguiendo buenas prácticas de separación de capas, pruebas automatizadas y despliegue en contenedores.
 
 ## Estructura del Proyecto
 
@@ -56,6 +56,7 @@ Las pruebas integrales se encuentran en `test/integration/test_messages.py` y cu
 - Consulta de mensajes por ID
 - Listado de todos los mensajes
 - Listado de mensajes por sesión
+- Búsqueda de mensajes por contenido, sesión o remitente
 
 Ejemplo de ejecución:
 ```sh
@@ -105,6 +106,10 @@ El archivo `.dockerignore` excluye archivos temporales, entornos virtuales y car
 - `POST /messages/`: Crea un nuevo mensaje.
 - `GET /messages/{message_id}`: Obtiene un mensaje por ID.
 - `GET /messages/sessions/{session_id}`: Lista mensajes por sesión (con paginación y filtro por remitente).
+- `GET /messages/search/`: Busca mensajes por contenido, sesión o remitente (parámetros: `q`, `session_id`, `sender`).
+- `DELETE /messages/{message_id}`: Elimina un mensaje por ID.
+- `PUT /messages/{message_id}`: Actualiza un mensaje existente.
+- Otros endpoints según reglas de negocio.
 
 ## Autores
 
@@ -112,4 +117,4 @@ El archivo `.dockerignore` excluye archivos temporales, entornos virtuales y car
 
 ## Licencia
 
-Este proyecto está bajo la licencia
+Este proyecto está bajo
