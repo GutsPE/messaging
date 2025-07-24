@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prueba WebSocket</title>
+</head>
+
+<body>
+    <h2>WebSocket Test</h2>
+    <pre id="log"></pre>
+
+    <script>
+        const log = (msg) => {
+            document.getElementById("log").textContent += msg + "\n";
+        };
+
+        const ws = new WebSocket("ws://localhost:8000/ws/messages?token=secret");
+
+        ws.onopen = () => log("✅ Conectado al WebSocket");
+        ws.onmessage = (event) => {
+            try {
+                const data = JSON.parse(event.data);
+                log("📨 Mensaje recibido: " + JSON.stringify(data, null, 2));
+            } catch (e) {
+                log("❌ Error al parsear JSON: " + event.data);
+            }
+        };
+        ws.onerror = (error) => log("❌ Error: " + error);
+        ws.onclose = () => log("🔒 Conexión cerrada");
+    </script>
+</body>
+
+</html>

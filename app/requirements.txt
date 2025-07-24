@@ -1,0 +1,13 @@
+# TODO Agregar la lista de las bibliotecas necesarias para que el proyecto corra
+#
+# Ejemplo
+#
+# fastapi==0.115.6
+#
+# Nota: Evitar utilizar > python pip freeze > requirements.txt
+# Se recomienda utilizar pipreqs
+uvicorn==0.34.0
+fastapi==0.115.7
+python-dotenv==1.0.1
+SQLAlchemy==2.0.37
+psycopg2==2.9.10
