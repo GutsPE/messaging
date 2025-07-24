@@ -37,9 +37,9 @@ Este proyecto implementa una arquitectura limpia para la gestión de mensajes ut
 2. Ejecuta la aplicación:
    ```sh
    cd app
-   uvicorn main:app --reload --port 8001
+   uvicorn main:app --reload --port 8000
    ```
-3. Accede a la documentación interactiva en [http://localhost:8001/docs](http://localhost:8001/docs).
+3. Accede a la documentación interactiva en [http://localhost:8000/docs](http://localhost:8000/docs).
 
 ## Pruebas
 
@@ -94,7 +94,7 @@ Si deseas construir y ejecutar la aplicación en un contenedor Docker:
    ```
 3. Ejecuta el contenedor:
    ```sh
-   docker run -d -p 8001:8001 --env-file .env python-arch-main
+   docker run -d -p 8000:8000 --env-file .env python-arch-main
    ```
 
 El archivo `.dockerignore` excluye archivos temporales, entornos virtuales y carpetas de control de versiones para optimizar la construcción de la imagen.
