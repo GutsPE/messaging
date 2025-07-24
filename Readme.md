@@ -113,7 +113,7 @@ El archivo `.dockerignore` excluye archivos temporales, entornos virtuales y car
 
 ## Autores
 
-- Equipo de desarrollo (Giancarlo Villanueva Andrade)
+- Equipo de desarrollo (Guts)
 
 ## Licencia
 
